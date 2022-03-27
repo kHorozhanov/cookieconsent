@@ -1,8 +1,10 @@
 import { defineConfig } from "vitepress"
 
 export default defineConfig({
+    lang: 'en-US',
     title: 'CookieConsent',
     description: 'Simple cross-browser cookie-consent plugin written in vanilla js',
+    lastUpdated: true,
 
     themeConfig: {
         docsDir: 'docs',
@@ -24,8 +26,7 @@ export default defineConfig({
 
         sidebar: {
             '/': getGuideSidebar(),
-            '/advanced/': getGuideSidebar(),
-            '/faq/': getFaqSidebar(),
+            '/advanced/': getGuideSidebar()
         },
     },
 
@@ -58,23 +59,6 @@ function getGuideSidebar() {
             children: [
                 { text: 'Consent Records', link: '/faq/consent-records' },
                 { text: 'Block Iframes', link: '/faq/block-iframes' }
-            ]
-        }
-    ]
-}
-
-function getFaqSidebar() {
-    return [
-        {
-            text: 'App Config',
-            children: [{ text: 'Basics', link: '/config/basics' }]
-        },
-        {
-            text: 'Theme Config',
-            children: [
-                { text: 'Homepage', link: '/config/homepage' },
-                { text: 'Algolia Search', link: '/config/algolia-search' },
-                { text: 'Carbon Ads', link: '/config/carbon-ads' }
             ]
         }
     ]
