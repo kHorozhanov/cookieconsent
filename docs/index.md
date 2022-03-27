@@ -1,7 +1,7 @@
 ---
 title: CookieConsent
 lang: en-US
-home: false
+home: true
 editLink: false
 heroText: CookieConsent
 tagline: Simple cookie-consent plugin written in vanilla js
@@ -15,9 +15,3 @@ features:
   - title: Flexible
     details: Can by easily configured and adapted to your needs.
 ---
-
-# CookieConsent
-
-A simple cookie consent plugin written in vanilla js.
-
-[Start](/introduction/get-started)
