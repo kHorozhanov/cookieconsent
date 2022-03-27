@@ -1,0 +1,28 @@
+{
+  "name": "cookieconsent_docs",
+  "version": "1.0.0",
+  "description": "Documentation for the cookieconsent plugin",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orestbida/cookieconsent.git"
+  },
+  "keywords": [
+    "docs",
+    "cookieconsent"
+  ],
+  "author": "Orest Bida",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/orestbida/cookieconsent/issues"
+  },
+  "homepage": "https://github.com/orestbida/cookieconsent#readme",
+  "devDependencies": {
+    "vitepress": "^0.22.3"
+  }
+}
