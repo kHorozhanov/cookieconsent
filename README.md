@@ -1,7 +1,7 @@
 # CookieConsent DOCS
+Status: work in progress.
 
-WIP.
+Docs. available [here](https://cookieconsent.orestbida.com).
 
-Deployment available [here](https://cookieconsent.orestbida.com).
 
 Powered by [vitepress](https://vitepress.vuejs.org/).
