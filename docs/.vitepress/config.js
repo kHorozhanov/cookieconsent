@@ -7,6 +7,7 @@ export default defineConfig({
     lastUpdated: true,
 
     themeConfig: {
+        repo: 'orestbida/cookieconsent',
         docsDir: 'docs',
         docsBranch: 'docs',
         lastUpdated: 'Last Updated',
