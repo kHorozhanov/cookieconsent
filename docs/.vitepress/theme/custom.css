@@ -68,7 +68,7 @@
     --code-line-height: 24px;
     --code-font-family: var(--font-family-mono);
     --code-font-size: 14px;
-    --code-inline-bg-color: rgb(29 34 39);
+    --code-inline-bg-color: rgba(226, 241, 255, 0.1);
     --code-bg-color: rgb(29 34 39);
 }
 
@@ -88,7 +88,9 @@ header{
 body{
     overflow-x: hidden;
     padding-right: .5em;
-    overflow: overlay;
+    overflow-y: auto;
+    overflow-y: overlay;
+    scrollbar-width: thin;
 }
 
 p{
@@ -193,7 +195,31 @@ li > div[class*='language-']{
     overflow-x: overlay;
 }
 
-@media screen and (min-width: 600px){
+html,
+div,
+aside,
+[class*="language-"] pre{
+    scrollbar-width: thin;
+}
+
+.warning.custom-block{
+    border: none;
+    border-radius: 0.4em;
+    background: rgba(255, 194, 124, 0.161);
+    margin-bottom: 2em;
+}
+
+.warning.custom-block .custom-block-title{
+    color: #ffb571;
+}
+
+.warning.custom-block p,
+.warning.custom-block code{
+    color: #eed2bf;
+}
+
+@media screen and (min-width: 720px){
+
     ::-webkit-scrollbar {
         background-color: transparent;
     }
@@ -209,5 +235,10 @@ li > div[class*='language-']{
 
     ::-webkit-scrollbar-thumb:hover{
         background-color: var(--c-brand);
+    }
+}
+@media screen and (max-width: 720px){
+    body{
+        padding-right: 0;
     }
 }
