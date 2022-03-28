@@ -76,6 +76,21 @@ html{
     scroll-behavior: smooth;
 }
 
+html,
+header{
+    width: 100vw;
+}
+
+header{
+    padding-right: .2em;
+}
+
+body{
+    overflow-x: hidden;
+    padding-right: .5em;
+    overflow: overlay;
+}
+
 p{
     color: #bcc5ce;
 }
@@ -172,4 +187,27 @@ li > div[class*='language-']{
 
 [class*='language-'] code{
     color: #c7d0d6;
+}
+
+[class*='language-'] pre{
+    overflow-x: overlay;
+}
+
+@media screen and (min-width: 600px){
+    ::-webkit-scrollbar {
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border: 7px solid transparent;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border-radius: 10px;
+        background-color: #3c4147;
+        box-shadow: inset -1px -1px 0 rgb(0 0 0 / 5%), inset 1px 1px 0 rgb(0 0 0 / 5%);
+    }
+
+    ::-webkit-scrollbar-thumb:hover{
+        background-color: var(--c-brand);
+    }
 }
