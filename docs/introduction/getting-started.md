@@ -43,22 +43,28 @@ Import `cookieconsent.css` and `cookieconsent.js` files respectively in the head
 </html>
 ```
 
+::: warning Note
+Replace `path-to-cookieconsent.js`, `path-to-cookieconsent.css` and `path-to-cookieconsent-init.js` with real, valid paths. It is recommended to use an absolute path starting from the root `/` directory of your web app/site. E.g. `/assets/js/cookieconsent.js`.
+:::
+
+
 [Configure](./configuration.md) the plugin inside `cookieconsent-init.js`:
 ```javascript
 const cc = CookieConsent.init();
 
 cc.run({
-    // your config. goes here
+    // your config. goes here (required)
 });
 ```
 <br>
 
 ### React
-```javascript
+Assuming that you have installed the plugin via NPM, you can import it as follows:
+```javascript{3-4}
 import { useEffect } from "react";
 
-import "path-to-cookieconsent.css";
-import CookieConsent from "path-to-cookieconsent.js";
+import "vanilla-cookieconsent/dist/cookieconsent.css";
+import CookieConsent from "vanilla-cookieconsent";
 ```
 
 [Configure](./configuration.md) the plugin inside the `useEffect` hook:
@@ -70,7 +76,7 @@ export default function App() {
         const cc = CookieConsent.init();
 
         cc.run({
-            // your config. goes here
+            // your config. goes here (required)
         });
     }, []);
 
