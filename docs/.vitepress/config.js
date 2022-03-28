@@ -29,10 +29,6 @@ export default defineConfig({
             '/': getGuideSidebar(),
             '/advanced/': getGuideSidebar()
         },
-    },
-
-    markdown: {
-        lineNumbers: true
     }
 });
 
@@ -42,7 +38,7 @@ function getGuideSidebar() {
         {
             text: 'Introduction',
             children: [
-                { text: 'Getting Started', link: '/introduction/get-started' },
+                { text: 'Getting Started', link: '/introduction/getting-started' },
                 { text: 'Configuration', link: '/introduction/configuration' },
             ]
         },

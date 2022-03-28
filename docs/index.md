@@ -1,12 +1,10 @@
 ---
-title: CookieConsent
-lang: en-US
 home: true
 editLink: false
 heroText: CookieConsent
 tagline: Simple cookie-consent plugin written in vanilla js
 actionText: Get Started
-actionLink: /introduction/get-started
+actionLink: /introduction/getting-started
 features:
   - title: Vanilla JS
     details: Easy to embed in any platform or framework using the same configuration steps and syntax.
