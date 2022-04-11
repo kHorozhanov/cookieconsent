@@ -38,24 +38,28 @@ function getGuideSidebar() {
         {
             text: 'Introduction',
             children: [
+                { text: 'What you should know', link: '/introduction/must-know' },
                 { text: 'Getting Started', link: '/introduction/getting-started' },
-                { text: 'Configuration', link: '/introduction/configuration' },
             ]
         },
         {
             text: 'Advanced',
             children: [
-                { text: 'UI Customization', link: '/advanced/ui-customization' },
+                { text: 'Configuration Options', link: '/advanced/configuration-reference' },
                 { text: 'API Reference', link: '/advanced/api-reference' },
+                { text: 'UI Customization', link: '/advanced/ui-customization' },
                 { text: 'Callbacks and Events', link: '/advanced/callbacks-events' },
-                { text: 'Custom data actions', link: '/advanced/data-actions' }
+                { text: 'Custom data actions', link: '/advanced/data-actions' },
+                { text: 'Revision Management', link: '/advanced/revision-management'}
             ]
         },
         {
-            text: 'FAQ',
+            text: 'Additional resources',
             children: [
-                { text: 'Consent Records', link: '/faq/consent-records' },
-                { text: 'Block Iframes', link: '/faq/block-iframes' }
+                { text: 'FAQ', link: '/additional/faq' },
+                { text: 'Troubleshooting', link: '/additional/troubleshooting' },
+                { text: 'Contributions', link: '/additional/contributions' },
+                { text: 'License', link: '/additional/license' },
             ]
         }
     ]
