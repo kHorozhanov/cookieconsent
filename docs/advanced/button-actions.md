@@ -1,6 +1,6 @@
-# Data Actions
+# Button Actions
 
-`data-cc` is a custom attribute which allows you to bind any button — or link  — to a few, specific <br> [API methods](/advanced/api-reference.html) in order to execute core functions, without the need to use javascript code.
+`data-cc` is a custom attribute which allows you to bind any button — or link  — to a few and select [API methods](/advanced/api-reference.html) in order to run core functions, without the need to use javascript code.
 
 Valid values:
 - `show--preferences`
@@ -8,14 +8,14 @@ Valid values:
 - `accept-necessary`
 - `accept-custom`
 
-Example usage:
+Example:
 ```html
 <button type="button" data-cc="show--preferences">View preferences modal</button>
 ```
 <br>
 
 ## `show--preferences`
-Use this value to show the `preferencesModal` in order to allow the user to change his preferences at any time.
+Use this value to show the `preferencesModal`.
 
 ## `accept-all`
 Use this value to accept all cookie categories.

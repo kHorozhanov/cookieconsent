@@ -45,11 +45,12 @@ function getGuideSidebar() {
         {
             text: 'Advanced',
             children: [
-                { text: 'Configuration Options', link: '/advanced/configuration-reference' },
+                { text: 'Configuration Reference', link: '/advanced/configuration-reference' },
                 { text: 'API Reference', link: '/advanced/api-reference' },
                 { text: 'UI Customization', link: '/advanced/ui-customization' },
                 { text: 'Callbacks and Events', link: '/advanced/callbacks-events' },
-                { text: 'Custom data actions', link: '/advanced/data-actions' },
+                { text: 'Custom Button Actions', link: '/advanced/button-actions' },
+                { text: 'Scripts Management', link: '/advanced/manage-scripts' },
                 { text: 'Revision Management', link: '/advanced/revision-management'}
             ]
         },
@@ -58,7 +59,6 @@ function getGuideSidebar() {
             children: [
                 { text: 'FAQ', link: '/additional/faq' },
                 { text: 'Troubleshooting', link: '/additional/troubleshooting' },
-                { text: 'Contributions', link: '/additional/contributions' },
                 { text: 'License', link: '/additional/license' },
             ]
         }

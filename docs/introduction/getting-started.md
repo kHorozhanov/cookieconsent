@@ -231,7 +231,7 @@ If you're having trouble setting up the plugin, you can check out a few [demo ex
 <br>
 
 
-## Block third party scripts/cookies
+## Manage scripts/cookies
 You can block any `script` tag by simply adding the following 2 attributes:
 
 - `type="text/plain"` disables the script
@@ -254,6 +254,9 @@ After:
     console.log("Hi, I'm an inline script!");
 </script>
 ```
+
+You can also use [callbacks or custom events](/advanced/callbacks-events) for more flexibility.
+
 <br>
 
 ## Open preferences modal
@@ -264,6 +267,6 @@ The simplest way to open the preferences modal is by creating a `button` (or a l
 <button type="button" data-cc="show--preferences">Manage cookie preferences</button>
 ```
 
-Check out all [available `data-cc` options](/advanced/data-actions.html).
+Check out all [available button actions](/advanced/button-actions).
 
 <br>

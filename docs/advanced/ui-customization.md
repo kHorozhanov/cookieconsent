@@ -20,7 +20,7 @@ guiOptions: {
     },
     preferencesModal: {
         layout: 'box',
-        // position: 'left right',  // does not apply to the box layout
+        // position: 'left right',
         flipButtons: false,
         equalWeightButtons: true
     }
@@ -37,7 +37,7 @@ Each modal has a different set of possible layouts and positions. A layout may a
 | `cloud`       | `inline`        | `top`, `middle`, `bottom`| `left`, `center`, `right`
 | `bar `        | `inline`        | `bottom`                 | -
 
-Example usage:
+Example:
 ```javascript
 guiOptions: {
     consentModal: {
@@ -47,6 +47,11 @@ guiOptions: {
 }
 ```
 
+::: warning Syntax
+Valid `layout` syntax: `"layoutName layoutVariant"`. <br>
+Valid `position` syntax: `"positionY positionX"`.
+:::
+
 ### `preferencesModal`
 
 | Layout        | Variant(s)      | Position-Y               | Position-X
@@ -54,7 +59,7 @@ guiOptions: {
 | `box`         | -               | -                        | -
 | `bar `        | `wide`          | -                        | `left`, `right`
 
-Example usage:
+Example:
 ```javascript
 guiOptions: {
     preferencesModal: {

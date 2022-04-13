@@ -68,5 +68,5 @@ window.addEventListener('onChange', function(){
 
 
 ::: warning
-If you're using custom events, make sure to subscribe to the specific event prior to the plugin's execution, to avoid any potential inconsistent behavior.
+If you're using custom events, make sure to subscribe to the specific event prior to the plugin's execution, to avoid potential inconsistent behaviors.
 :::
