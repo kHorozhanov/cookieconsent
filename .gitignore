@@ -22,3 +22,4 @@ docs/.vitepress/dist/*
 *.njsproj
 *.sln
 *.sw?
+*.env
