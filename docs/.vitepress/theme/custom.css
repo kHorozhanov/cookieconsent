@@ -72,11 +72,6 @@
     --code-bg-color: rgb(29 34 39);
 }
 
-html,
-header{
-    width: 100vw;
-}
-
 header{
     padding-right: .2em;
 }
@@ -261,6 +256,35 @@ tr:nth-child(2n){
     background-color: transparent;
 }
 /* END: Dark table */
+
+/* START: Algolia Search */
+.DocSearch {
+    --docsearch-spacing: 16px!important;
+    --docsearch-primary-color: #ffad4f!important;
+    --docsearch-searchbox-background: #1d2227!important;
+    --docsearch-modal-background: #1d2227!important;
+    --docsearch-modal-shadow: 0 2px 15px black!important;
+    --docsearch-searchbox-focus-background: #2c3238!important;
+    --docsearch-searchbox-shadow: 0 0 0 2px var(--c-brand)!important;
+
+    --docsearch-hit-color: #e7eaef!important;
+    --docsearch-hit-active-color: #1d2227!important;
+    --docsearch-hit-background: #2c3238!important;
+    --docsearch-hit-shadow: 0 1px 3px 0 #14171b!important;
+
+    --docsearch-footer-background: #14181b!important;
+    --docsearch-footer-shadow: 0 -1px 0 0 #0f1214!important;
+    --docsearch-container-background: rgba(0, 0, 0, 0.73)!important;
+}
+
+.DocSearch-Dropdown{
+    margin-top: 10px!important;
+}
+
+.DocSearch-Container{
+    backdrop-filter: blur(1px)!important;
+}
+/* END: Algolia Search */
 
 @media screen and (min-width: 720px){
 

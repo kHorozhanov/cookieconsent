@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress"
+import 'dotenv/config'
 
 export default defineConfig({
     lang: 'en-US',
@@ -13,6 +14,11 @@ export default defineConfig({
         lastUpdated: 'Last Updated',
         editLinks: true,
         editLinkText: 'Edit this page on GitHub',
+        algolia: {
+            appId: process.env.ALGOLIA_APP_ID,
+            apiKey: process.env.ALGOLIA_API_KEY,
+            indexName: process.env.ALGOLIA_INDEX_NAME
+        },
 
         nav: [
             {
