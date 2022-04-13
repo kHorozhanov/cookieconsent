@@ -258,6 +258,12 @@ tr:nth-child(2n){
 /* END: Dark table */
 
 /* START: Algolia Search */
+
+.algolia-search-box *,
+.DocSearch-Container *{
+    font-family: inherit;
+}
+
 .DocSearch {
     --docsearch-spacing: 16px!important;
     --docsearch-primary-color: #ffad4f!important;
@@ -265,7 +271,8 @@ tr:nth-child(2n){
     --docsearch-modal-background: #1d2227!important;
     --docsearch-modal-shadow: 0 2px 15px black!important;
     --docsearch-searchbox-focus-background: #2c3238!important;
-    --docsearch-searchbox-shadow: 0 0 0 2px var(--c-brand)!important;
+    --docsearch-searchbox-shadow: 0 0 0 1px var(--c-brand)!important;
+    --docsearch-searchbox-height: 52px!important;
 
     --docsearch-hit-color: #e7eaef!important;
     --docsearch-hit-active-color: #1d2227!important;
@@ -275,6 +282,9 @@ tr:nth-child(2n){
     --docsearch-footer-background: #14181b!important;
     --docsearch-footer-shadow: 0 -1px 0 0 #0f1214!important;
     --docsearch-container-background: rgba(0, 0, 0, 0.73)!important;
+
+    --docsearch-key-gradient: transparent!important;
+    --docsearch-key-shadow: none!important;
 }
 
 .DocSearch-Dropdown{
@@ -284,25 +294,58 @@ tr:nth-child(2n){
 .DocSearch-Container{
     backdrop-filter: blur(1px)!important;
 }
+
+.DocSearch-Search-Icon{
+    transform: scale(.8)!important;
+}
+
+.DocSearch-Input{
+    font-size: 1.1em!important;
+    padding-bottom: 1px;
+}
+
+.DocSearch-Button-Key{
+    width: unset!important;
+    top: unset!important;
+    height: unset!important;
+    padding-bottom: 0!important;
+    margin-right: 0!important;
+}
+
+.DocSearch-Button-Keys{
+    min-width: unset!important;
+    padding: 2px 8px!important;
+    border: 1px solid #444b51!important;
+    border-radius: 10em!important;
+}
+
+.DocSearch-Button-Key:first-child{
+    margin-right: 0.4em!important;
+}
+
+.DocSearch-Prefill{
+    font-weight: 600!important;
+}
 /* END: Algolia Search */
 
 @media screen and (min-width: 720px){
 
+
     ::-webkit-scrollbar {
-        background-color: transparent;
+        background-color: transparent!important;
     }
 
     ::-webkit-scrollbar-thumb {
-        border: 7px solid transparent;
-        -webkit-background-clip: padding-box;
-        background-clip: padding-box;
-        border-radius: 10px;
-        background-color: #3c4147;
-        box-shadow: inset -1px -1px 0 rgb(0 0 0 / 5%), inset 1px 1px 0 rgb(0 0 0 / 5%);
+        border: 7px solid transparent!important;
+        -webkit-background-clip: padding-box!important;
+        background-clip: padding-box!important;
+        border-radius: 10px!important;
+        background-color: #3c4147!important;
+        box-shadow: inset -1px -1px 0 rgb(0 0 0 / 5%), inset 1px 1px 0 rgb(0 0 0 / 5%)!important;
     }
 
     ::-webkit-scrollbar-thumb:hover{
-        background-color: var(--c-brand);
+        background-color: var(--c-brand)!important;
     }
 }
 @media screen and (max-width: 720px){
