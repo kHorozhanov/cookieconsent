@@ -1,19 +1,37 @@
-const fs = require('fs')
-const path = require('path')
-const fg = require('fast-glob')
-const { SitemapStream, streamToPromise } = require('sitemap')
+const fs = require('fs');
+const path = require('path');
+const fg = require('fast-glob');
+const { SitemapStream, streamToPromise } = require('sitemap');
+const { Readable } = require('stream');
 
-console.log('Start building sitemap..')
+const docsDir = './docs';
+const publicDir = 'public';
+const domain = 'https://cookieconsent.orestbida.com';
 
-const linksStream = fg.stream(['./docs/**/*.md'])
-  .map((filePath) => ({ url: filePath.replace('docs/', '').replace(/\.md$/, '.html') }))
+(async () => {
 
-const sitemapStream = new SitemapStream({ hostname: 'https://cookieconsent.orestbida.com' })
+    /**
+     * An array with your links
+     * [{url: 'advanced/buttons-actions.html'}, {url: '...'}, ...]
+     */
+    const entries = (await fg([`${docsDir}/**/*.md`]))
+        .map(filePath => ({ url: filePath.replace(`${docsDir}`, '').replace(/\.md$/, '.html')}));
 
-// Return a promise that resolves with your XML string
-streamToPromise(linksStream.pipe(sitemapStream)).then((sitemap) => {
-  fs.writeFileSync(
-    path.resolve(__dirname, './docs/public/sitemap.xml'),
-    sitemap,
-  )
-})
+    if(!entries) return;
+
+    // Create a stream to write to
+    const stream = new SitemapStream({ hostname: domain });
+
+    // Promise that resolves with your XML string
+    streamToPromise(Readable.from(entries).pipe(stream)).then((data) =>
+        data.toString()
+    ).then(sitemap => {
+        fs.writeFileSync(
+            path.resolve(__dirname, `${docsDir}/${publicDir}/sitemap.xml`),
+            sitemap,
+        )
+    });
+
+    console.log("Sitemap generated!");
+
+})();
