@@ -13,7 +13,7 @@ const sitemapStream = new SitemapStream({ hostname: 'https://cookieconsent.orest
 // Return a promise that resolves with your XML string
 streamToPromise(linksStream.pipe(sitemapStream)).then((sitemap) => {
   fs.writeFileSync(
-    path.resolve(__dirname, './public/sitemap.xml'),
+    path.resolve(__dirname, './docs/public/sitemap.xml'),
     sitemap,
   )
 })
