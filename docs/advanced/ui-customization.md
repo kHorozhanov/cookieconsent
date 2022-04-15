@@ -3,7 +3,7 @@
 You can extensively customize both the color scheme and the layout, based on your needs.
 
 
-## `guiOptions`
+## guiOptions
 You can customize both modals through `guiOptions`:
 
 - [`consentModal`](#consentmodal)
@@ -29,7 +29,7 @@ guiOptions: {
 
 Each modal has a different set of possible layouts and positions. A layout may also have one or more variants.
 
-### `consentModal`
+### consentModal
 
 | Layout        | Variant(s)      | Position-Y               | Position-X
 | ------------- |-----------------|--------------------------|--------------------------
@@ -52,7 +52,7 @@ Valid `layout` syntax: `"layoutName layoutVariant"`. <br>
 Valid `position` syntax: `"positionY positionX"`.
 :::
 
-### `preferencesModal`
+### preferencesModal
 
 | Layout        | Variant(s)      | Position-Y               | Position-X
 | ------------- |-----------------|--------------------------|--------------------------

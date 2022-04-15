@@ -14,14 +14,14 @@ Example:
 ```
 <br>
 
-## `show--preferences`
+## show--preferences
 Use this value to show the `preferencesModal`.
 
-## `accept-all`
+## accept-all
 Use this value to accept all cookie categories.
 
-## `accept-necessary`
+## accept-necessary
 Use this value to accept only the necessary cookie categories.
 
-## `accept-custom`
+## accept-custom
 Use this value to accept the current selection inside the preferences modal.
