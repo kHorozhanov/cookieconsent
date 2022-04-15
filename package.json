@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "node ./generate-sitemap.js && vitepress build docs ",
-    "serve": "vitepress serve docs"
+    "serve": "vitepress serve docs",
+    "postinstall": "patch-package"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "homepage": "https://github.com/orestbida/cookieconsent#readme",
   "devDependencies": {
     "fast-glob": "^3.2.11",
+    "patch-package": "^6.4.7",
     "sitemap": "^7.1.1",
     "vitepress": "^0.22.3"
   },
