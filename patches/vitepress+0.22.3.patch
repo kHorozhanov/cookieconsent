@@ -1,0 +1,14 @@
+diff --git a/node_modules/vitepress/dist/client/theme-default/components/NavLink.vue b/node_modules/vitepress/dist/client/theme-default/components/NavLink.vue
+index 29e7674..d511ffb 100644
+--- a/node_modules/vitepress/dist/client/theme-default/components/NavLink.vue
++++ b/node_modules/vitepress/dist/client/theme-default/components/NavLink.vue
+@@ -16,7 +16,8 @@ const { props: linkProps, isExternal } = useNavLink(propsRefs.item)
+ <template>
+   <div class="nav-link">
+     <a class="item" v-bind="linkProps">
+-      {{ item.text }} <OutboundLink v-if="isExternal" />
++      <span class="item__content" v-html="item.icon || item.text"></span>
++      <OutboundLink v-if="isExternal && !item.icon" />
+     </a>
+   </div>
+ </template>
