@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress"
 import 'dotenv/config'
+import { GithubIcon, HeartIcon } from "../components/icons";
 
 export default defineConfig({
     lang: 'en-US',
@@ -7,8 +8,13 @@ export default defineConfig({
     description: 'Simple cross-browser cookie-consent plugin written in vanilla js',
     lastUpdated: true,
 
+    head: [
+        ['link', {rel: 'preconnect', href: 'https://fonts.googleapis.com'}],
+        ['link', {rel: 'preconnect', href: 'https://fonts.gstatic.com'}],
+        ['link', {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap'}]
+    ],
+
     themeConfig: {
-        repo: 'orestbida/cookieconsent',
         docsDir: 'docs',
         docsBranch: 'docs',
         lastUpdated: 'Last Updated',
@@ -22,12 +28,21 @@ export default defineConfig({
 
         nav: [
             {
-                text: 'Demo Playground',
+                text: 'Config Reference',
+                link: '/advanced/configuration-reference.html'
+            },
+            {
+                text: 'Playground',
                 link: 'https://orestbida.com/demo-projects/cookieconsent/'
             },
             {
-                text: 'Latest release',
-                link: 'https://github.com/orestbida/cookieconsent/releases'
+                icon: GithubIcon,
+                ariaLabel: 'Github page',
+                link: 'https://orestbida.com/demo-projects/cookieconsent/'
+            },
+            {
+                icon: HeartIcon,
+                link: '/#todo'
             }
         ],
 
