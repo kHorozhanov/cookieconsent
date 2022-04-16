@@ -12,7 +12,6 @@ Example:
 ```html
 <button type="button" data-cc="show--preferences">View preferences modal</button>
 ```
-<br>
 
 ## show--preferences
 Use this value to show the `preferencesModal`.

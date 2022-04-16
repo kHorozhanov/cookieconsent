@@ -1,5 +1,5 @@
 ---
-home: true
+home: false
 editLink: false
 heroText: CookieConsent
 tagline: Simple cookie-consent plugin written in vanilla js

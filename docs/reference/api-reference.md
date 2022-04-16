@@ -12,7 +12,7 @@ Configures the plugin with the provided config. object.
     ```
 - **Details**
 
-    The `config` argument is required and must contain — at least — the `categories` and `language` properties (both properly configured). Check out how to set up [categories](/advanced/configuration-reference.html#categories) and [translations](/advanced/configuration-reference.html#languages-and-translations).
+    The `config` argument is required and must contain — at least — the `categories` and `language` properties (both properly configured). Check out how to set up [categories](/reference/configuration-reference.html#categories) and [translations](/reference/configuration-reference.html#languages-and-translations).
 
 - **Example**
     ```javascript
@@ -31,8 +31,6 @@ Configures the plugin with the provided config. object.
         }
     });
     ```
-
-<br>
 
 
 ## show
@@ -57,7 +55,20 @@ Shows the consent modal.
     cc.show(0, true);
     ```
 
-<br>
+## hide
+
+Hides the consent modal.
+
+- **Type**
+
+    ```javascript
+    function(): void
+    ```
+
+- **Example**
+    ```javascript
+    cc.hide();
+    ```
 
 ## showPreferences
 
@@ -81,24 +92,6 @@ Shows the preferences modal.
     cc.showPreferences();
     ```
 
-<br>
-
-## hide
-
-Hides the consent modal.
-
-- **Type**
-
-    ```javascript
-    function(): void
-    ```
-
-- **Example**
-    ```javascript
-    cc.hide();
-    ```
-
-<br>
 
 ## hidePreferences
 
@@ -115,7 +108,6 @@ Hides the preferences modal.
     cc.hidePreferences();
     ```
 
-<br>
 
 ## accept
 
@@ -131,26 +123,25 @@ Accepts or rejects categories.
     ```
 - **Details**
 
-    The first argument accepts the following possible values:
-    - `undefined` (not specified)
-    - `'all'` accept all,
-    - `'category_1'` accept only this category
-    - `[]` reject all/accepts necessary only,
-    - `['category_1', 'category_2']` accept specific categories (reject all the others)
+    The first argument accepts either a `string` or an `array` of strings. Special values:
 
-- **Example**
+    - `'all'` accept all
+    - `[]`: empty array, accept none (reject all)
+    - ` `: empty argument, accept only the categories selected in the preferences modal
+
+- **Examples**
     ```javascript
     cc.accept('all');                // accept all categories
     cc.accept([]);                   // reject all (accept only categories marked as readOnly/necessary)
+    cc.accept();                     // accept currently selected categories inside the preferences modal
+
     cc.accept('analytics');          // accept only the "analytics" category
     cc.accept(['cat_1', 'cat_2']);   // accept only these 2 categories
-    cc.accept();                     // accept currently selected categories inside the preferences modal
 
     cc.accept('all', ['analytics']); // accept all categories except the "analytics" category
     cc.accept('all', ['cat_1', 'cat_2']); // accept all categories except these 2
     ```
 
-<br>
 
 ## acceptedCategory
 
@@ -162,7 +153,7 @@ Returns `true` if the specified category was accepted, otherwise `false`.
     function(categoryName: string): boolean
     ```
 
-- **Example**
+- **Examples**
     ```javascript
     /**
      * if the user accepted the 'analytics' category
@@ -179,4 +170,53 @@ Returns `true` if the specified category was accepted, otherwise `false`.
     if(!cc.acceptedCategory('ads')){
         console.log("oh no ...");
     }
+    ```
+
+## validCookie
+
+Returns `true` if the specified cookie is valid (exists and its content is not empty).
+
+- **Type**
+
+    ```javascript
+    function(cookieName: string): boolean
+    ```
+
+- **Example** <br>
+
+    Check if the `'gid'` cookie is set.
+
+    ```javascript
+    if(cc.validCookie('_gid')){
+        // _gid cookie is valid!
+    }else{
+        // _gid cookie is not set ...
+    }
+    ```
+
+## eraseCookies
+
+Removes one or multiple cookies.
+
+- **Type**
+
+    ```javascript
+    function(
+        cookies: string[],
+        path?: string,
+        domains?: string[]
+    ): boolean
+    ```
+
+- **Examples** <br>
+
+    Delete the plugin's own cookie
+
+    ```javascript
+    cc.eraseCookies(['cc_cookie']);
+    ```
+
+    Delete the `_gid` and `_ga` cookies:
+    ```javascript
+    cc.eraseCookies(['_ga', '_gid'], '/', [location.hostname]);
     ```

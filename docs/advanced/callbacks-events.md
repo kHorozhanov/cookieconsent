@@ -7,7 +7,7 @@ Available callbacks/events:
 - `onConsent`
 - `onChange`
 
-## `onFirstConsent`
+## onFirstConsent
 This event is triggered only the very first time that the user expresses their choice of consent (accept/reject).
 
 Example (callback way):
@@ -26,7 +26,7 @@ window.addEventListener('onFirstConsent', function(){
 });
 ```
 
-## `onConsent`
+## onConsent
 This event is triggered the very first time the user expresses expresses their choice of consent — just like `onFirstConsent` — but also on every subsequent page load.
 
 Example (callback way):
@@ -45,7 +45,7 @@ window.addEventListener('onConsent', function(){
 });
 ```
 
-## `onChange`
+## onChange
 This event is triggered when the user modifies their preferences and only if consent has already been provided.
 
 Example (callback way):
@@ -67,6 +67,7 @@ window.addEventListener('onChange', function(){
 <br>
 
 
-::: warning
+<CustomBlock type="warning" title="Note">
 If you're using custom events, make sure to subscribe to the specific event prior to the plugin's execution, to avoid potential inconsistent behaviors.
-:::
+
+</CustomBlock>

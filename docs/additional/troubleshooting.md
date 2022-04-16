@@ -3,8 +3,6 @@ Issues you might encounter and possible fixes.
 
 [[toc]]
 
-<br>
-
 ### Missing Web Server
 Check your path in the browser window, and make sure it begins with either `http` or `https`. If it is something else, chances are that you haven't set-up a [Web Server](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server).
 

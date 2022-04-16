@@ -47,10 +47,11 @@ guiOptions: {
 }
 ```
 
-::: warning Syntax
+<CustomBlock type="warning" title="Note">
 Valid `layout` syntax: `"layoutName layoutVariant"`. <br>
 Valid `position` syntax: `"positionY positionX"`.
-:::
+
+</CustomBlock>
 
 ### preferencesModal
 

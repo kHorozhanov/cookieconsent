@@ -3,8 +3,6 @@ Couldn't find the answer in the documentation? Feel free to open a [discussion](
 
 [[toc]]
 
-<br>
-
 ### Does this plugin store consent records?
 
 CookieConsent is a client-side script only and therefore cannot store any kind of server-side data.

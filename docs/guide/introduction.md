@@ -1,4 +1,4 @@
-# What you should know
+# Is CookieConsent for you?
 
 Before trying and setting up the plugin, there are a few things you should know.
 

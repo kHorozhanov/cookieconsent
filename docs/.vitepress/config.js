@@ -6,18 +6,19 @@ export default defineConfig({
     lang: 'en-US',
     title: 'CookieConsent',
     description: 'Simple cross-browser cookie-consent plugin written in vanilla js',
-    lastUpdated: true,
+    lastUpdated: false,
 
     head: [
         ['link', {rel: 'preconnect', href: 'https://fonts.googleapis.com'}],
-        ['link', {rel: 'preconnect', href: 'https://fonts.gstatic.com'}],
-        ['link', {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap'}]
+        ['link', {rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true}],
+        ['link', {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap'}],
+        ['link', {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap'}]
     ],
 
     themeConfig: {
+        repo: 'orestbida/cookieconsent',
         docsDir: 'docs',
         docsBranch: 'docs',
-        lastUpdated: 'Last Updated',
         editLinks: true,
         editLinkText: 'Edit this page on GitHub',
         algolia: {
@@ -29,11 +30,11 @@ export default defineConfig({
         nav: [
             {
                 text: 'Config Reference',
-                link: '/advanced/configuration-reference.html'
+                link: '/reference/configuration-reference.html'
             },
             {
-                text: 'Playground',
-                link: 'https://orestbida.com/demo-projects/cookieconsent/'
+                text: 'API Reference',
+                link: '/reference/api-reference.html'
             },
             {
                 icon: GithubIcon,
@@ -42,13 +43,15 @@ export default defineConfig({
             },
             {
                 icon: HeartIcon,
+                ariaLabel: 'Donations',
                 link: '/#todo'
             }
         ],
 
         sidebar: {
             '/': getGuideSidebar(),
-            '/advanced/': getGuideSidebar()
+            '/advanced/': getGuideSidebar(),
+            '/reference/': getGuideSidebar()
         },
     }
 });
@@ -57,17 +60,22 @@ export default defineConfig({
 function getGuideSidebar() {
     return [
         {
-            text: 'Introduction',
+            text: 'Getting Started',
             children: [
-                { text: 'What you should know', link: '/introduction/must-know' },
-                { text: 'Getting Started', link: '/introduction/getting-started' },
+                { text: 'Introduction', link: '/guide/introduction' },
+                { text: 'QuickStart', link: '/guide/quickstart' },
+            ]
+        },
+        {
+            text: 'References',
+            children: [
+                { text: 'Config Options', link: '/reference/configuration-reference' },
+                { text: 'API Methods', link: '/reference/api-reference' },
             ]
         },
         {
             text: 'Advanced',
             children: [
-                { text: 'Configuration Reference', link: '/advanced/configuration-reference' },
-                { text: 'API Reference', link: '/advanced/api-reference' },
                 { text: 'UI Customization', link: '/advanced/ui-customization' },
                 { text: 'Callbacks and Events', link: '/advanced/callbacks-events' },
                 { text: 'Custom Button Actions', link: '/advanced/button-actions' },

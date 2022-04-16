@@ -3,7 +3,7 @@ You can enable the revision management if you need to refresh the consent due to
 
 - `revision` number (default = 0)
 
-## How to enable
+## Enable revisions
 To enable revisions, you just need to specify a valid `revision` number in your configuration:
 ```javascript
 cc.run({
@@ -11,14 +11,15 @@ cc.run({
 });
 ```
 
-::: warning NOTE
+<CustomBlock type="warning" title="Note">
 The new revision number must be different from the current revision number.
-:::
+
+</CustomBlock>
 
 Once enabled, users who had already consented to revision 0, will be prompted again for consent.
 
 ## Revision message
-Optionally, you can also set a revision message to let your users know what has changed since last time they visited.
+Optionally, you can also set a revision message to let your users know what has changed since the last time they visited.
 
 1. Add a `revisionMessage` field inside `consentModal`
 2. Specify the `{{startBrackets}}revisionMessage{{endBrackets}}` placeholder inside `consentModal.description`

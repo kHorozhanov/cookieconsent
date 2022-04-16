@@ -22,7 +22,6 @@ You can download/import the plugin using one of the following methods:
     ```
 3. Download the [latest release](https://github.com/orestbida/cookieconsent/releases/latest) from github and use the optimized files located in the `dist` folder.
 
-<br><br>
 
 ## Usage
 Here are some of the most common setups to help you get up and running.
@@ -48,9 +47,11 @@ Import `cookieconsent.css` and `cookieconsent.js` files respectively in the head
 </html>
 ```
 
-::: warning NOTE
+<CustomBlock type="warning" title="Note">
+
 Replace `path-to-cookieconsent.js`, `path-to-cookieconsent.css` and `path-to-cookieconsent-init.js` with valid paths. It is recommended to use an absolute path starting from the root `/` directory of your web app/site. E.g. `/assets/js/cookieconsent.js`.
-:::
+
+</CustomBlock>
 
 
 [Configure](#configuration) the plugin inside `cookieconsent-init.js`:
@@ -61,7 +62,6 @@ cc.run({
     // your config. goes here (required)
 });
 ```
-<br>
 
 ### React
 Assuming that you have installed the plugin via NPM, you can import it as follows:
@@ -91,7 +91,7 @@ export default function App() {
 
 ### Vue
 
-The simplest way to integrate CookieConsent in a VUE App is by importing the `ESM` version.
+The simplest way to integrate CookieConsent in a VUE App is by importing the `ESM` module located in the `/dist/esm/` directory.
 
 Create a new [VUE Plugin](https://vuejs.org/guide/reusability/plugins.html), `CookieConsentVue.js`:
 ```javascript
@@ -105,9 +105,12 @@ export default {
     }
 }
 ```
-::: info
+
+<CustomBlock type="info" title="Info">
+
 The newly created VUE Plugin will allow you to access CookieConsent from any component, using either `this.$cc` or `$cc`.
-:::
+
+</CustomBlock>
 
 "Register" the plugin in your root/APP component, inside `main.js`:
 ```javascript{5,9-11}
@@ -125,8 +128,7 @@ createApp(App)
     .mount('#app');
 ```
 Finally, [Configure](#configuration) the plugin.
-<br>
-<br>
+
 <br>
 
 ## Configuration
@@ -135,96 +137,97 @@ The most basic configuration requires the definition of the following 2 fields:
 - `categories`
 - `language`
 
-The config. object should look something like this:
-```javascript
-cc.run({
-    categories: {
-        // your categories (at least one)
-    },
-    language: {
-        // your languages/translations (at least one)
-    }
-});
-```
+* **Example** <br>
 
-Here's an example on how to define 2 cookie categories: `necessary` and `analytics`:
-```javascript
-categories: {
-    necessary: {
-        enabled: true,  // this category is enabled by default
-        readOnly: true  // this category cannot be disabled
-    },
-    analytics: {
-        enabled: false,
-        readOnly: false,
+    In this example we have have defined 2 categories ("necessary", "analytics") — and the `en` language.
 
-        // Delete specific cookies when the user opts-out of this category
-        autoClear: {
-            cookies: [
-                {
-                    name: /^_ga/,   // regex: match all cookies starting with '_ga'
-                },
-                {
-                    name: '_gid',   // string: exact cookie name
-                }
-            ]
-        }
-    }
-}
-```
+    ```javascript
+    {
 
-Let's define the `en` language:
-```javascript
-language: {
-    default: 'en',
+        onConsent: function () {
+            // consent was given
+        },
 
-    translations: {
-        en: {
-            consentModal: {
-                title: 'We use cookies',
-                description: 'Cookie modal description',
-                acceptAllBtn: 'Accept all',
-                acceptNecessaryBtn: 'Reject all',
-                showPreferencesBtn: 'Manage Individual preferences'
+        onChange: function (changedCategories) {
+            // user changed his/her preferences
+        },
+
+        categories: {
+            necessary: {
+                enabled: true,  // this category is enabled by default
+                readOnly: true  // this category cannot be disabled
             },
-            preferencesModal: {
-                title: 'Manage cookie preferences',
-                acceptAllBtn: 'Accept all',
-                acceptNecessaryBtn: 'Reject all',
-                savePreferencesBtn: 'Accept current selection',
-                closeIconLabel: 'Close modal',
-                sections: [
-                    {
-                        title: 'Somebody said ... cookies?',
-                        description: 'I want one!'
-                    },
-                    {
-                        title: 'Strictly Necessary cookies',
-                        description: 'These cookies are essential for the proper functioning of the website and cannot be disabled.',
+            analytics: {
+                enabled: false,
+                readOnly: false,
 
-                        //this field will generate a toggle linked to the 'necessary' category
-                        linkedCategory: 'necessary'
+                // Delete specific cookies when the user opts-out of this category
+                autoClear: {
+                    cookies: [
+                        {
+                            name: /^_ga/,   // regex: match all cookies starting with '_ga'
+                        },
+                        {
+                            name: '_gid',   // string: exact cookie name
+                        }
+                    ]
+                }
+            }
+        }
+
+        language: {
+            default: 'en',
+
+            translations: {
+                en: {
+                    consentModal: {
+                        title: 'We use cookies',
+                        description: 'Cookie modal description',
+                        acceptAllBtn: 'Accept all',
+                        acceptNecessaryBtn: 'Reject all',
+                        showPreferencesBtn: 'Manage Individual preferences'
                     },
-                    {
-                        title: 'Performance and Analytics',
-                        description: 'These cookies collect information about how you use our website. All of the data is anonymized and cannot be used to identify you.',
-                        linkedCategory: 'analytics'
-                    },
-                    {
-                        title: 'More information',
-                        description: 'For any queries in relation to my policy on cookies and your choices, please <a href="#contact-page">contact us</a>'
+                    preferencesModal: {
+                        title: 'Manage cookie preferences',
+                        acceptAllBtn: 'Accept all',
+                        acceptNecessaryBtn: 'Reject all',
+                        savePreferencesBtn: 'Accept current selection',
+                        closeIconLabel: 'Close modal',
+                        sections: [
+                            {
+                                title: 'Somebody said ... cookies?',
+                                description: 'I want one!'
+                            },
+                            {
+                                title: 'Strictly Necessary cookies',
+                                description: 'These cookies are essential for the proper functioning of the website and cannot be disabled.',
+
+                                //this field will generate a toggle linked to the 'necessary' category
+                                linkedCategory: 'necessary'
+                            },
+                            {
+                                title: 'Performance and Analytics',
+                                description: 'These cookies collect information about how you use our website. All of the data is anonymized and cannot be used to identify you.',
+                                linkedCategory: 'analytics'
+                            },
+                            {
+                                title: 'More information',
+                                description: 'For any queries in relation to my policy on cookies and your choices, please <a href="#contact-page">contact us</a>'
+                            }
+                        ]
                     }
-                ]
+                }
             }
         }
     }
-}
-```
+    ```
+
 You should now see the consent modal pop up!
 
-:::info TIP
-You can also define external translation files. [Show me how](#TODO)
-:::
+<CustomBlock type="tip" title="Tip">
+You can also define external translation files. Check out the dedicated [language section](/reference/configuration-reference.html#language-translations).
+
+</CustomBlock>
 
 If you're having trouble setting up the plugin, you can check out a few [demo examples](https://github.com/orestbida/cookieconsent/tree/master/demo) on github.
 
@@ -248,7 +251,7 @@ Before:
 
 After:
 ```html
-<script src="example.js" type="text/plain" data-cookiecategory="analytics"></script>
+<script src="external.js" type="text/plain" data-cookiecategory="analytics"></script>
 
 <script type="text/plain" data-cookiecategory="analytics">
     console.log("Hi, I'm an inline script!");
@@ -268,5 +271,3 @@ The simplest way to open the preferences modal is by creating a `button` (or a l
 ```
 
 Check out all [available button actions](/advanced/button-actions).
-
-<br>
