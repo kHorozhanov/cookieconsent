@@ -12,3 +12,18 @@ index 29e7674..d511ffb 100644
      </a>
    </div>
  </template>
+diff --git a/node_modules/vitepress/dist/client/theme-default/components/NavLinks.vue b/node_modules/vitepress/dist/client/theme-default/components/NavLinks.vue
+index bc22159..b8a152e 100644
+--- a/node_modules/vitepress/dist/client/theme-default/components/NavLinks.vue
++++ b/node_modules/vitepress/dist/client/theme-default/components/NavLinks.vue
+@@ -24,10 +24,6 @@ const show = computed(() => theme.value.nav || repo.value || localeLinks.value)
+     <div v-if="localeLinks" class="item">
+       <NavDropdownLink :item="localeLinks" />
+     </div>
+-
+-    <div v-if="repo" class="item">
+-      <NavLink :item="repo" />
+-    </div>
+   </nav>
+ </template>
+ 
