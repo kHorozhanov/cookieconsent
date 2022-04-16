@@ -38,7 +38,7 @@ Although using script tags is very easy, they are also very limited and might no
 ## Using callbacks/events
 Check out all the available [callbacks and events](/advanced/callbacks-events).
 
-You can adapt the above script tag example for use inside the `onConsent` callback. You'd also need to make use of the `.acceptedCategory()` method, described in the [API Reference](/advanced/api-reference) section.
+You can adapt the above script tag example for use inside the `onConsent` callback. You'd also need to make use of the `.acceptedCategory()` method, described in the [API Reference](/reference/api-reference) section.
 
 `onConsent` callback example:
 ```javascript

@@ -73,7 +73,7 @@ Intercepts all `<script>` tags with a `data-cookiecategory` attribute, and enabl
 - type: `boolean`
 - default: `true`
 
-Clears all cookies listed inside a specific category, when the user rejects that category. It requires a valid `autoClear` array. Check out the [categories.autoClear](/advanced/configuration-reference.html#categories-autoclear) section.
+Clears all cookies listed inside a specific category, when the user rejects that category. It requires a valid `autoClear` array. Check out the [categories.autoClear](/reference/configuration-reference.html#categories-autoclear) section.
 
 ## hideFromBots
 
