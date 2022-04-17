@@ -172,6 +172,8 @@ Returns `true` if the specified category was accepted, otherwise `false`.
     }
     ```
 
+## validConsent
+
 ## validCookie
 
 Returns `true` if the specified cookie is valid (exists and its content is not empty).
@@ -220,3 +222,83 @@ Removes one or multiple cookies.
     ```javascript
     cc.eraseCookies(['_ga', '_gid'], '/', [location.hostname]);
     ```
+
+
+
+## loadScript
+
+Loads script files (`.js`).
+
+- **Type**
+
+    ```javascript
+    function(
+        path: string,
+        callback?: function(): void,
+        attributes?: [
+            { name: string, value: string }
+        ]
+    ): void
+    ```
+
+- **Examples** <br>
+
+    Load google analytics:
+
+    ```javascript
+    cc.loadScript('https://www.google-analytics.com/analytics.js', function(){
+        // Script loaded, do something
+    });
+    ```
+
+    Load script with attributes:
+    ```javascript
+    cookieconsent.loadScript('https://www.google-analytics.com/analytics.js', function(){
+        // Script loaded, do something
+    }, [
+        {name: 'id', value: 'ga_script'},
+        {name: 'another-attribute', value: 'value'}
+    ]);
+    ```
+
+## updateScripts
+
+## getCookie
+
+## getConfig
+
+## getUserPreferences
+
+Returns user's preferences, such as accepted and rejected categories.
+
+- **Type**
+
+    ```javascript
+    function(): {
+        acceptType: string,
+        acceptedCategories: string[],
+        rejectedCategories: string[]
+    }
+    ```
+- **Details**
+
+    Possible `acceptType` values: `'all'`, `'custom'` or `'necessary'`.
+
+- **Example** <br>
+
+    ```javascript
+    const preferences = cc.getUserPreferences();
+
+    if(preferences.acceptType === 'all'){
+        console.log("Awesome!");
+    }
+
+    if(preferences.acceptedCategories.includes('analytics')){
+        console.log("The analytics category was accepted!");
+    }
+    ```
+
+
+## setLanguage
+
+## setCookieData

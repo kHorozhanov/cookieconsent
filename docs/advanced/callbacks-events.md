@@ -10,59 +10,77 @@ Available callbacks/events:
 ## onFirstConsent
 This event is triggered only the very first time that the user expresses their choice of consent (accept/reject).
 
-Example (callback way):
-```javascript
-cc.run({
-    onFirstConsent: function(){
-        // do something ...
-    }
-});
-```
+- **Type**
+    ```javascript
+    function(): void
+    ```
 
-Example (custom event):
-```javascript
-window.addEventListener('onFirstConsent', function(){
-    // do something
-});
-```
+- **Example** <br>
+
+    ```javascript
+    cc.run({
+        onFirstConsent: function(){
+            // do something
+        }
+    });
+    ```
+
+    using event listener:
+    ```javascript
+    window.addEventListener('onFirstConsent', function(){
+        // do something
+    });
+    ```
 
 ## onConsent
-This event is triggered the very first time the user expresses expresses their choice of consent — just like `onFirstConsent` — but also on every subsequent page load.
+This event is triggered the very first time the user expresses expresses their choice of consent — just like `onFirstConsent` — but also **on every subsequent page load**.
 
-Example (callback way):
-```javascript
-cc.run({
-    onConsent: function(){
-        // do something ...
-    }
-});
-```
+- **Type**
+    ```javascript
+    function(): void
+    ```
 
-Example (custom event):
-```javascript
-window.addEventListener('onConsent', function(){
-    // do something
-});
-```
+- **Example** <br>
+
+    ```javascript
+    cc.run({
+        onConsent: function(){
+            // do something
+        }
+    });
+    ```
+
+    using event listener:
+    ```javascript
+    window.addEventListener('onConsent', function(){
+        // do something
+    });
+    ```
 
 ## onChange
 This event is triggered when the user modifies their preferences and only if consent has already been provided.
 
-Example (callback way):
-```javascript
-cc.run({
-    onChange: function(){
-        // do something ...
-    }
-});
-```
+- **Type**
+    ```javascript
+    function(): void
+    ```
 
-Example (custom event):
-```javascript
-window.addEventListener('onChange', function(){
-    // do something
-});
-```
+- **Example** <br>
+
+    ```javascript
+    cc.run({
+        onChange: function(){
+            // do something
+        }
+    });
+    ```
+
+    using event listener:
+    ```javascript
+    window.addEventListener('onChange', function(){
+        // do something
+    });
+    ```
 
 <br>
 

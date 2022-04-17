@@ -49,7 +49,7 @@ Import `cookieconsent.css` and `cookieconsent.js` files respectively in the head
 
 <CustomBlock type="warning" title="Note">
 
-Replace `path-to-cookieconsent.js`, `path-to-cookieconsent.css` and `path-to-cookieconsent-init.js` with valid paths. It is recommended to use an absolute path starting from the root `/` directory of your web app/site. E.g. `/assets/js/cookieconsent.js`.
+Replace `path-to-cookieconsent.js`, `path-to-cookieconsent.css` and `path-to-cookieconsent-init.js` with valid paths.
 
 </CustomBlock>
 
@@ -93,7 +93,7 @@ export default function App() {
 
 The simplest way to integrate CookieConsent in a VUE App is by importing the `ESM` module located in the `/dist/esm/` directory.
 
-Create a new [VUE Plugin](https://vuejs.org/guide/reusability/plugins.html), `CookieConsentVue.js`:
+Create a new [VUE Plugin](https://vuejs.org/essential/reusability/plugins.html), `CookieConsentVue.js`:
 ```javascript
 import "vanilla-cookieconsent/dist/cookieconsent.css";
 import CookieConsent from "vanilla-cookieconsent/dist/esm/cookieconsent.js"
@@ -148,7 +148,7 @@ The most basic configuration requires the definition of the following 2 fields:
             // consent was given
         },
 
-        onChange: function (changedCategories) {
+        onChange: function () {
             // user changed his/her preferences
         },
 
@@ -173,7 +173,7 @@ The most basic configuration requires the definition of the following 2 fields:
                     ]
                 }
             }
-        }
+        },
 
         language: {
             default: 'en',
@@ -264,10 +264,10 @@ You can also use [callbacks or custom events](/advanced/callbacks-events) for mo
 
 ## Open preferences modal
 The simplest way to open the preferences modal is by creating a `button` (or a link) with the following attribute:
-- `data-cc="show--preferences"`
+- `data-cc="show-preferences"`
 
 ```html
-<button type="button" data-cc="show--preferences">Manage cookie preferences</button>
+<button type="button" data-cc="show-preferences">Manage cookie preferences</button>
 ```
 
-Check out all [available button actions](/advanced/button-actions).
+Check out all the possible [data-cc](/advanced/custom-attribute)  values.
