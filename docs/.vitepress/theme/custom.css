@@ -532,6 +532,54 @@ main > .container{
     background-color: rgba(209, 229, 255, .08);
 }
 
+.custom-block.details{
+    margin: 0 0 .5rem 0!important;
+    padding: 0!important;
+    border-radius: 0!important;
+    background-color: transparent!important;
+}
+
+.custom-block.details summary{
+    display: block!important;
+    padding: 0.5em 1.5rem!important;
+    background-color: rgba(157, 237, 202, 0.137);
+    border: 1px solid rgba(49, 71, 64, 0.365);
+    color: #7fc096;
+    border-radius: 6px;
+    transition: background-color .2s ease, border-color .2s ease;
+    position: relative;
+}
+
+.custom-block.details summary::before{
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    padding: 0.2em;
+    display: inline-block;
+    top: 1px;
+    position: relative;
+    content: "";
+    left: -0.5em;
+    margin-right: 0.5em;
+    transition: transform .2s ease;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.custom-block.details summary:hover{
+    background-color: rgba(157, 237, 202, 0.1);
+    border-color: rgba(49, 71, 64, 0.212);
+}
+
+.custom-block.details[open] summary{
+    background-color: #1d2227!important;
+    border-color: #252a30!important;
+}
+
+.custom-block.details[open] summary::before{
+    transform: translateY(-10%) rotate(225deg);
+}
+
+
+
 @media screen and (min-width: 720px){
 
     .theme,
