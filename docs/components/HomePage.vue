@@ -135,7 +135,7 @@ export default{
     .c-action{
         background-color: var(--c-brand);
         border-radius: 7px;
-        padding: 0.6em 1.4em;
+        padding: 0.7em 1.4em .6em 1.4em;
         color: #000;
         font-weight: 600;
         border: 2px solid var(--c-brand);
@@ -183,8 +183,11 @@ export default{
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        gap: 10px;
         margin-top: 10px;
+    }
+
+    .c-blocks:not(:first-child){
+        margin-left: 10px;
     }
 
     .c-block{
