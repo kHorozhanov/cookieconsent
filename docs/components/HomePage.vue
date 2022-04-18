@@ -186,7 +186,7 @@ export default{
         margin-top: 10px;
     }
 
-    .c-blocks:not(:first-child){
+    .c-block:not(:first-child){
         margin-left: 10px;
     }
 
