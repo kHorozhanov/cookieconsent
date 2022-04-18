@@ -1,5 +1,5 @@
-# Configuration Options
-Overview of all the availabe configuration options.
+# Configuration Reference
+Overview of all the available configuration options.
 
 **Before diving in:**
 
@@ -18,7 +18,7 @@ Overview of all the availabe configuration options.
 
     </CustomBlock>
 - <CustomBlock type="info" title="About the examples">
-    All the examples in this section are partial code snippets. They do not represet full/valid configurations.
+    All the examples in this section are partial code snippets. They do not represent full/valid configurations.
 
     </CustomBlock>
 
