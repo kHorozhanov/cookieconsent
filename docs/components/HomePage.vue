@@ -1,11 +1,24 @@
 <script>
-import { JsIcon, RightArrow } from "./icons.js";
+import {
+    JsIcon,
+    RightArrow,
+    FeatherIcon,
+    SecurityIcon,
+    LowVisionIcon,
+    StarIcon,
+    TogglesIcon
+} from "./icons.js";
 
 export default{
     data(){
         return {
             JsIcon,
-            RightArrow
+            RightArrow,
+            FeatherIcon,
+            SecurityIcon,
+            LowVisionIcon,
+            StarIcon,
+            TogglesIcon
         }
     }
 }
@@ -15,59 +28,60 @@ export default{
 <template>
     <section class="c-header">
         <h1 class="c-header__title">CookieConsent</h1>
-        <h2 class="c-header__description">A lightweight and GDPR compliant consent Plugin</h2>
+        <h2 class="c-header__description">A lightweight and GDPR compliant consent management Tool</h2>
         <div class="c-header__actions">
             <a href="/essential/getting-started" class="c-action c-action--primary">
-                <span>Getting Started</span>
+                <span>Get Started</span>
                 <span class="right-arrow" v-html="RightArrow"></span>
             </a>
-            <a href="/essential/introduction.html" class="c-action c-action--secondary">Is this for you?</a>
+            <a href="/essential/introduction.html" class="c-action c-action--secondary">Introduction</a>
         </div>
     </section>
 
     <section class="max-width c-blocks">
         <div class="c-block">
             <h3 class="c-block__title">
-                <span class="c-block__title-icon" v-html="JsIcon"></span>
-                <span>Lightweight</span>
+                <span class="c-block__title-icon" v-html="FeatherIcon"></span>
+                <span class="c-block__title-text">Lightweight</span>
             </h3>
-            <p class="c-block__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+
+            <p class="c-block__desc">Small footprint with a minimal impact on your website's performance</p>
         </div>
         <div class="c-block">
             <h3 class="c-block__title">
-                <span class="c-block__title-icon" v-html="JsIcon"></span>
-                <span>Vanilla JS</span>
+                <span class="c-block__title-icon" v-html="LowVisionIcon"></span>
+                <span class="c-block__title-text">Accessible</span>
             </h3>
-            <p class="c-block__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+            <p class="c-block__desc">Adopts the best a11y practices and enables everyone to use it via keyboard or screen reader</p>
         </div>
         <div class="c-block">
             <h3 class="c-block__title">
-                <span class="c-block__title-icon" v-html="JsIcon"></span>
-                <span>Flexible</span>
+                <span class="c-block__title-icon" v-html="TogglesIcon"></span>
+                <span class="c-block__title-text">Flexible</span>
             </h3>
-            <p class="c-block__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+            <p class="c-block__desc">A wide variety of options and API to handle many types of possible configurations</p>
         </div>
     </section>
 
     <section class="max-width c-blocks">
         <div class="c-block">
             <h3 class="c-block__title">
-                <span class="c-block__title-icon" v-html="JsIcon"></span>
-                <span>GDPR Compliant</span>
+                <span class="c-block__title-icon" v-html="SecurityIcon"></span>
+                <span class="c-block__title-text">GDPR Compliant</span>
+            </h3>
+            <p class="c-block__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+        </div>
+        <div class="c-block">
+            <h3 class="c-block__title">
+                <span class="c-block__title-icon" v-html="StarIcon"></span>
+                <span class="c-block__title-text">Open Source</span>
             </h3>
             <p class="c-block__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
         </div>
         <div class="c-block">
             <h3 class="c-block__title">
                 <span class="c-block__title-icon" v-html="JsIcon"></span>
-                <span>Accessible</span>
-            </h3>
-            <p class="c-block__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
-        </div>
-        <div class="c-block">
-            <h3 class="c-block__title">
-                <span class="c-block__title-icon" v-html="JsIcon"></span>
-                <span>Customizable</span>
+                <span class="c-block__title-text">Vanilla JS</span>
             </h3>
             <p class="c-block__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
         </div>
@@ -77,7 +91,7 @@ export default{
         <div class="max-width">
             <footer class="c-footer">
                 <p>Released under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License.</a></p>
-                <p>Copyright © 2019-{{ new Date().getFullYear() }} Orest Bida</p>
+                <p>Copyright © 2020-{{ new Date().getFullYear() }} Orest Bida</p>
             </footer>
         </div>
     </section>
@@ -112,7 +126,7 @@ export default{
     }
 
     .c-header__title{
-        background: -webkit-linear-gradient(315deg,#f1b867 25%,#f9635c);
+        background: -webkit-linear-gradient(315deg,#f1b867 25%,#f18767);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -124,6 +138,7 @@ export default{
         margin-top: 1rem;
         color: #C1CCD4;
         font-size: 1.4em;
+        text-align: center;
     }
 
     .c-header__actions{
@@ -133,9 +148,10 @@ export default{
     }
 
     .c-action{
+        justify-content: center;
         background-color: var(--c-brand);
-        border-radius: 7px;
-        padding: 0.7em 1.4em .6em 1.4em;
+        border-radius: 5px;
+        padding: 0.65em 1.4em .55em 1.4em;
         color: #000;
         font-weight: 600;
         border: 2px solid var(--c-brand);
@@ -196,20 +212,7 @@ export default{
         background-color: #16181B;
         border-radius: 6px;
         flex: 1;
-    }
-
-    .c-block__title{
-        font-size: 1.25em;
-        display: flex;
-        align-items: center;
-    }
-
-    .c-block__title span{
-        display: flex;
-    }
-
-    .c-block__title-icon{
-        margin-right: .5em;
+        transition: background-color .2s ease;
     }
 
     .c-block__title,
@@ -218,12 +221,33 @@ export default{
     }
 
     .c-block__title{
+        font-size: 1.25em;
+        display: flex;
+        align-items: center;
         margin-bottom: 1rem;
         color: #BBC7CF;
+        transition: color .2s ease;
+    }
+
+    .c-block__title span{
+        display: flex;
+    }
+
+    .c-block__title-icon{
+        margin-right: .75rem;
+    }
+
+    .c-block__title-text{
+        margin-top: 1px;
     }
 
     .c-block__desc{
         color: #8C99A1;
+        transition: color .2s ease;
+    }
+
+    .c-block:hover{
+        background: #202226;
     }
 
     .c-footer__container{
@@ -251,5 +275,37 @@ export default{
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    @media screen and (max-width: 860px){
+
+        .c-header__title{
+            font-size: 3.5em;
+        }
+
+        .c-blocks{
+            flex-direction: column;
+        }
+
+        .c-block:not(:first-child){
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+
+    @media screen and (max-width: 500px){
+
+        .c-header__title{
+            font-size: 2.5em;
+        }
+
+        .c-header__actions{
+            flex-direction: column;
+        }
+
+        .c-action--primary{
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
     }
 </style>
