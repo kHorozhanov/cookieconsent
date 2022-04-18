@@ -225,7 +225,7 @@ The most basic configuration requires the definition of the following 2 fields:
 You should now see the consent modal pop up!
 
 <CustomBlock type="tip" title="Tip">
-You can also define external translation files. Check out the dedicated [language section](/reference/configuration-reference.html#language-translations).
+You can also define [external translation files](/advanced/language-configuration.html#external-translations).
 
 </CustomBlock>
 
