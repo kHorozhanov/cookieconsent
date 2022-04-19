@@ -1,5 +1,9 @@
 # API Reference
 
+<CustomBlock type="info" title="Note">
+The `?` symbol means that the parameter/property is optional.
+
+</CustomBlock>
 
 ## run
 
@@ -173,16 +177,37 @@ Returns `true` if the specified category was accepted, otherwise `false`.
     ```
 
 ## validConsent
+Returns `true` if consent is valid.
+
+- **Type**
+    ```javascript
+    function(): boolean
+    ```
+
+- **Details** <br>
+    Invalid consent is explained at the very top of the [Configuration Reference](/reference/configuration-reference.html) page.
+
+- **Example**
+    ```javascript
+    if(cc.validConsent()){
+        // consent is valid
+    }else{
+        // consent is not valid
+    }
+    ```
 
 ## validCookie
 
-Returns `true` if the specified cookie is valid (exists and its content is not empty).
+Returns `true` if the specified cookie is valid (it exists and its content is not empty).
 
 - **Type**
 
     ```javascript
     function(cookieName: string): boolean
     ```
+
+- **Details**
+    This method cannot detect if the cookie has expired as such information cannot be retrieved with javascript.
 
 - **Example** <br>
 
@@ -243,17 +268,26 @@ Loads script files (`.js`).
 
 - **Examples** <br>
 
-    Load google analytics:
+    Load a script:
 
     ```javascript
-    cc.loadScript('https://www.google-analytics.com/analytics.js', function(){
+    cc.loadScript('path-to-script.js', function(){
         // Script loaded, do something
+    });
+    ```
+
+    You may also nest multiple `.loadScript` methods:
+    ```javascript
+    cc.loadScript('path-to-script1.js', function(){
+        cc.loadScript('path-to-script2.js', function(){
+            // script1 and script2 loaded, do something
+        });
     });
     ```
 
     Load script with attributes:
     ```javascript
-    cookieconsent.loadScript('https://www.google-analytics.com/analytics.js', function(){
+    cookieconsent.loadScript('path-to-script.js', function(){
         // Script loaded, do something
     }, [
         {name: 'id', value: 'ga_script'},
@@ -263,7 +297,48 @@ Loads script files (`.js`).
 
 ## updateScripts
 
+Notifies the plugin that there are new `<script>` tags to handle. Useful if you dynamically inject html which contains script tags.
+
+- **Type**
+
+    ```javascript
+    function(): void
+    ```
+
+- **Example**
+
+    ```javascript
+    cc.updateScripts();
+    ```
+
+
 ## getCookie
+
+Returns the content of the plugin's cookie.
+
+- **Type**
+    ```javascript
+    function(
+        field?: string,
+        cookieName?: string,
+    ): any | {
+        categories: string[],
+        revision: number,
+        data: any,
+        consentId: string
+        consentTimestamp: string,
+        lastConsentTimestamp: string,
+    }
+    ```
+
+- **Example**
+    ```javascript
+    // Get only the 'data' field
+    const data = cc.getCookie('data');
+
+    // Get all fields
+    const cookieContent = cc.getCookie();
+    ```
 
 ## getConfig
 
@@ -300,5 +375,81 @@ Returns user's preferences, such as accepted and rejected categories.
 
 
 ## setLanguage
+Changes the modal's language. Returns `true` if the language was changed.
+
+- **Type**
+    ```javascript
+    function(
+        language: string,
+        force?: boolean
+    ): boolean
+    ```
+
+- **Examples** <br>
+
+    Assuming that the current language is set to `'en'`:
+
+    ```javascript
+    cc.setLanguage('it');       // true
+    cc.setLanguage('en');       // false, en is already the current language
+    ```
+
+    If you've changed the `'en'` translation's content, and you'd like to reflect the changes:
+    ```javascript
+    cc.setLanguage('en', true); // true
+    ```
 
 ## setCookieData
+Save custom data into the cookie. Returns `true` if the data was set successfully.
+
+- **Type** <br>
+
+    ```javascript
+    function({
+        value: any,
+        mode: string
+    }): boolean
+    ```
+
+- **Details** <br>
+    You may use this field to store any kind of data (as long as the entire cookie doesn't exceed the 4096 bytes size threshold). There are 2 modes:
+    - `'update'`: sets the new value only if its different from the previous value, and both are of the same type.
+    - `'overwrite'` (default): always sets the new value (overwrites any existing value).
+
+    <CustomBlock type="info" title="Note">
+    This API method is safe to use, as it does not alter the cookies' current expiration time.
+
+    </CustomBlock>
+
+
+- **Examples** <br>
+
+    ```javascript
+    // First set: true
+    cc.setData({
+        value: {id: 21, lang: 'it'}
+    }); //{id: 21, lang: 'it'}
+
+    // Change only the 'id' field: true
+    cc.setData({
+        value: {id: 22},
+        mode: 'update'
+    }); //{id: 22, lang: 'it'}
+
+    // Add a new field: true
+    cc.setData({
+        value: {newField: 'newValue'},
+        mode: 'update'
+    }); //{id: 22, lang: 'it', newField: 'newValue'}
+
+    // Change 'id' to a string value: FALSE
+    cc.setData({
+        value: {id: 'hello'},
+        mode: 'update'
+    }); //{id: 22, lang: 'it', newField: 'newValue'}
+
+    // Overwrite: true
+    cc.setData({
+        value: 'overwriteEverything'
+    }); // 'overwriteEverything'
+    ```

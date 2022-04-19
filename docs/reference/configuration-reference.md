@@ -110,8 +110,6 @@ Manages consent revisions.
 
     The default value `0` means that revision management is disabled. You can set any number different from 0 in order to enable it. Check out the dedicated [revision management](/advanced/revision-management.html) section.
 
-    E.g. if you change your cookie policy, you can invalidate all previous consents and ask your users again.
-
 
 ## manageScriptTags
 
@@ -306,8 +304,8 @@ Clear cookies when user rejects the cookie category. Available options for the a
 
 ## language <span class="required">required</span>
 
-### language.default
+### language.default <span class="required">required</span>
 
 ### language.autoDetect
 
-### language.translations
+### language.translations <span class="required">required</span>
