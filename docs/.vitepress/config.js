@@ -1,6 +1,6 @@
 import { defineConfig } from "vitepress"
 import 'dotenv/config'
-import { GithubIcon, HeartIcon } from "../components/icons";
+import { GithubIcon } from "../components/icons";
 
 export default defineConfig({
     lang: 'en-US',
@@ -44,11 +44,6 @@ export default defineConfig({
                 icon: GithubIcon,
                 ariaLabel: 'Github page',
                 link: 'https://github.com/orestbida/cookieconsent'
-            },
-            {
-                icon: HeartIcon,
-                ariaLabel: 'Donations',
-                link: '/#todo'
             }
         ],
 

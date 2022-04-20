@@ -4,8 +4,8 @@ CookieConsent is a free, open-source plugin which allows you to manage scripts â
 ### Is CookieConsent the right tool for you?
 Overview of the main cons/drawbacks you should be aware of: <br><br>
 
-<CheckListItem title="CookieConsent does not have default translations" type="i"/>
-<CheckListItem title="CookieConsent does not have default categories" type="i"/>
+<CheckListItem title="CookieConsent requires basic knowledge of javascript" type="i"/>
+<CheckListItem title="CookieConsent does not have default categories or translations" type="i"/>
 <CheckListItem title="CookieConsent is not a CMP" type="x"/>
 <CheckListItem title="CookieConsent does not store Consent Records" type="x"/>
 <CheckListItem title='CookieConsent does not implement the IAB Framework - TCF' type="x"/>

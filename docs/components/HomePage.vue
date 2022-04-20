@@ -49,17 +49,17 @@ export default{
         </div>
         <div class="c-block">
             <h3 class="c-block__title">
-                <span class="c-block__title-icon" v-html="LowVisionIcon"></span>
-                <span class="c-block__title-text">Accessible</span>
+                <span class="c-block__title-icon" v-html="TogglesIcon"></span>
+                <span class="c-block__title-text">Versatile</span>
             </h3>
-            <p class="c-block__desc">Adopts the best a11y practices and enables everyone to use it via keyboard or screen reader</p>
+            <p class="c-block__desc">A wide range of options and API to handle many different types of configurations.</p>
         </div>
         <div class="c-block">
             <h3 class="c-block__title">
-                <span class="c-block__title-icon" v-html="TogglesIcon"></span>
-                <span class="c-block__title-text">Flexible</span>
+                <span class="c-block__title-icon" v-html="LowVisionIcon"></span>
+                <span class="c-block__title-text">Accessible</span>
             </h3>
-            <p class="c-block__desc">A wide variety of options and API to handle many types of possible configurations</p>
+            <p class="c-block__desc">Follows a11y best practices and enables full control via keyboard and screen readers.</p>
         </div>
     </section>
 
@@ -69,29 +69,29 @@ export default{
                 <span class="c-block__title-icon" v-html="SecurityIcon"></span>
                 <span class="c-block__title-text">GDPR Compliant</span>
             </h3>
-            <p class="c-block__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+            <p class="c-block__desc">Blocks the execution of scripts until explicit consent is given and provides clear opt out options.</p>
         </div>
         <div class="c-block">
             <h3 class="c-block__title">
                 <span class="c-block__title-icon" v-html="StarIcon"></span>
                 <span class="c-block__title-text">Open Source</span>
             </h3>
-            <p class="c-block__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+            <p class="c-block__desc">Free and open source, maintained by the community and released under the MIT license.</p>
         </div>
         <div class="c-block">
             <h3 class="c-block__title">
                 <span class="c-block__title-icon" v-html="JsIcon"></span>
                 <span class="c-block__title-text">Vanilla JS</span>
             </h3>
-            <p class="c-block__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+            <p class="c-block__desc">Can be installed in any web platform or framework that supports Javascript.</p>
         </div>
     </section>
 
     <section class="c-footer__container">
         <div class="max-width">
             <footer class="c-footer">
-                <p>Released under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License.</a></p>
-                <p>Copyright © 2020-{{ new Date().getFullYear() }} Orest Bida</p>
+                <p>Released under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">MIT License.</a></p>
+                <p>Copyright © 2020-{{ new Date().getFullYear() }} <a href="https://orestbida.com/" target="_blank">Orest Bida</a></p>
             </footer>
         </div>
     </section>
@@ -136,7 +136,7 @@ export default{
 
     .c-header__description{
         margin-top: 1rem;
-        color: #C1CCD4;
+        color: #c4bcb1;
         font-size: 1.4em;
         text-align: center;
     }
@@ -151,7 +151,7 @@ export default{
         justify-content: center;
         background-color: var(--c-brand);
         border-radius: 5px;
-        padding: 0.65em 1.4em .55em 1.4em;
+        padding: 0.7em 1.4em .55em 1.4em;
         color: #000;
         font-weight: 600;
         border: 2px solid var(--c-brand);
@@ -268,7 +268,12 @@ export default{
     }
 
     .c-footer a{
-        color: #B6BFC5;
+        color: inherit;
+        transition: color .25s ease;
+    }
+
+    .c-footer a:hover{
+        color: #e0be87;
     }
 
     .c-footer{
@@ -285,6 +290,10 @@ export default{
 
         .c-blocks{
             flex-direction: column;
+        }
+
+        .c-block{
+            width: 100%;
         }
 
         .c-block:not(:first-child){

@@ -10,9 +10,11 @@ Check your path in the browser window, and make sure it begins with either `http
 Verify that all paths — pointing to the files — are correct.
 
 ### Some cookies are not deleted
-TODO: Some services such as GA4 recreate cookies right after deletion
+Check the cookie's path and domain and make sure they match your configuration.
+
+Some services — such as GA4 — might re create the deleted cookie and require you to explicitly disable the tracking using their own API.
 
 ### Some cookies are not deleted on subdomains
-Services such as Google Analytics set their cookies in the main domain. The plugin is unaware of this and simply searches for cookies in the current subdomain.
+Some services set their cookies in the main domain even if you are on a sub-domain. The plugin is unaware of this and just searches for cookies in the current sub-domain.
 
-You have to manually specify the `domain` field within each cookie declared in the `autoClear` object.
+You have to manually specify the `domain` field within each cookie declared in the `autoClear` object. See the [categories.autoClear](/reference/configuration-reference.html#categories-autoclear) section.

@@ -3,11 +3,11 @@ Couldn't find the answer in the documentation? Feel free to open a [discussion](
 
 [[toc]]
 
-### Does this plugin store consent records?
+### Does CookieConsent store consent records?
 
-CookieConsent is a client-side script only and therefore cannot store any kind of server-side data.
+CookieConsent is a client-side only solution and therefore cannot access or store any type of data on the server.
 
-You will have to either implement your own API and database or completely switch to a more mainstream solution.
+You will either have to implement your own API and database or switch entirely to a more mainstream solution.
 
 ### How can I block iframes?
 
