@@ -2,7 +2,7 @@
   "name": "cookieconsent",
   "version": "1.0.0",
   "description": "<h1 align=\"center\" style=\"text-align: center;\">Cookie Consent</h1> <div align=\"center\" style=\"text-align: center;\">",
-  "main": "dist/cookieconsent.js",
+  "main": "src/cookieconsent.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
