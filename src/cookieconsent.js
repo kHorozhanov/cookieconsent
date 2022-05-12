@@ -12,11 +12,6 @@
      */
     var CookieConsent = function(root){
 
-        /**
-         * CHANGE THIS FLAG FALSE TO DISABLE console.log()
-         */
-        var ENABLE_LOGS = true;
-
         var _config = {
             'mode': 'opt-in',                         // 'opt-in', 'opt-out'
             'current_lang': 'en',
@@ -1241,7 +1236,7 @@
          * @param {Object} [optional_param]
          */
         var _log = function(print_msg, optional_param, error){
-            ENABLE_LOGS && (!error ? console.log(print_msg, optional_param !== undefined ? optional_param : ' ') : console.error(print_msg, optional_param || ""));
+            window.ENABLE_CC_LOGS && (!error ? console.log(print_msg, optional_param !== undefined ? optional_param : ' ') : console.error(print_msg, optional_param || ""));
         }
 
         /**
