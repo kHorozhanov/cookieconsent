@@ -1404,5 +1404,18 @@ html.force--consent.show--consent body {
 .cc_div.ie #cs-ov {
     filter: alpha(opacity=80);
 }
+#s-bns {
+    display: flex;
+    flex-direction: row-reverse;
+}
+#s-bns .c-bn {
+    flex: 0 0 auto;
+    margin-left: 1rem;
+}
+#s-bns .c-bn:last-child {
+    margin-left: 0;
+    float: unset;
+    margin-right: auto;
+}
 
 /** END IE FIXES **/
