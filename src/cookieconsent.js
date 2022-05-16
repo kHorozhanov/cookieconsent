@@ -1665,7 +1665,6 @@
                             }else{  // others
                                 fresh_script.onload = function(){
                                     fresh_script.onload = null;
-                                    console.log('onload');
                                     _loadScripts(scripts, ++index);
                                 };
                             }
